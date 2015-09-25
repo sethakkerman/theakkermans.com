@@ -1,0 +1,21 @@
+# Other F≈olders #
+holidays2014/
+working_files/
+
+# SCSSC #
+*.scssc
+assets/styles/.sass-cache/
+assets/styles/.sass-cache/*
+
+# Packages #
+.dmg
+.zip
+.tar
+.rar
+
+# OS Generated Files #
+config.codekit
+_notes/
+.DS_Store*
+Thumbs.db
+.DS_Store
