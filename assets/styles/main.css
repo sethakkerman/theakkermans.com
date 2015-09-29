@@ -40,10 +40,10 @@ li { list-style: none; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-html { background-color: #444749; background: -webkit-linear-gradient(#00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ background: -o-linear-gradient(#00aeef, #73bf43); /* For Opera 11.1 to 12.0 */ background: -moz-linear-gradient(#00aeef, #73bf43); /* For Firefox 3.6 to 15 */ background: linear-gradient(#00aeef, #73bf43); /* Standard syntax (must be last) */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); width: 100%; margin: 0 auto; }
-@media screen and (min-width: 56.25em) { html { background: -webkit-linear-gradient(left top, #00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ background: -o-linear-gradient(bottom right, #00aeef, #73bf43); /* For Opera 11.1 to 12.0 */ background: -moz-linear-gradient(bottom right, #00aeef, #73bf43); /* For Firefox 3.6 to 15 */ background: linear-gradient(to bottom right, #00aeef, #73bf43); /* Standard syntax (must be last) */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); } }
+html { height: 100%; }
 
-html.no-touch { height: 100%; }
+body { background-color: #444749; background: -webkit-linear-gradient(#00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ background: -o-linear-gradient(#00aeef, #73bf43); /* For Opera 11.1 to 12.0 */ background: -moz-linear-gradient(#00aeef, #73bf43); /* For Firefox 3.6 to 15 */ background: linear-gradient(#00aeef, #73bf43); /* Standard syntax (must be last) */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); width: 100%; height: 100%; margin: 0 auto; background-repeat: no-repeat; background-attachment: fixed; }
+@media screen and (min-width: 56.25em) { body { background: -webkit-linear-gradient(left top, #00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ background: -o-linear-gradient(bottom right, #00aeef, #73bf43); /* For Opera 11.1 to 12.0 */ background: -moz-linear-gradient(bottom right, #00aeef, #73bf43); /* For Firefox 3.6 to 15 */ background: linear-gradient(to bottom right, #00aeef, #73bf43); /* Standard syntax (must be last) */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); } }
 
 div, article, section, header, footer, nav, figure, li { position: relative; }
 
