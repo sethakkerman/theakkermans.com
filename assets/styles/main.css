@@ -51,11 +51,11 @@ div { position: inherit; }
 
 img { max-width: 100%; }
 
-figure.profile_image { height: 200px; width: 200px; }
+figure.profile_image { height: 200px; width: 200px; -moz-border-radius: 100%; -khtml-border-radius: 100%; -webkit-border-radius: 100%; border-radius: 100%; overflow: hidden; }
 @media screen and (min-width: 56.25em) { figure.profile_image { height: 220px; width: 220px; } }
 
-.balls { -moz-border-radius: 100px; -khtml-border-radius: 100px; -webkit-border-radius: 100px; border-radius: 100px; overflow: hidden; height: 200px; width: 200px; margin: 0 auto; position: relative; }
-@media screen and (min-width: 56.25em) { .balls { -moz-border-radius: 110px; -khtml-border-radius: 110px; -webkit-border-radius: 110px; border-radius: 110px; height: 220px; width: 220px; } }
+.balls { height: 200px; width: 200px; margin: 0 auto; position: relative; }
+@media screen and (min-width: 56.25em) { .balls { height: 220px; width: 220px; } }
 
 .family_member { width: 100%; height: 420px; left: 0; top: 0; padding: 30px 0px 25px 0px; }
 @media screen and (min-width: 56.25em) { .family_member { width: 50%; height: 100%; left: 0; top: 0; position: absolute; padding: 150px 0px 0px 125px; } }
@@ -68,27 +68,27 @@ figure.profile_image { height: 200px; width: 200px; }
 
 .toggle-wrapper { padding-top: 40px; text-align: center; }
 
-.toggle { position: relative; display: inline-block; width: 100px; margin-left: 100px; padding: 4px; border-radius: 40px; }
+.toggle { position: relative; display: inline-block; width: 90px; /*margin-left: 100px;*/ padding: 4px; border-radius: 40px; }
 
 .toggle:before, .toggle:after { content: ''; display: table; }
 
 .toggle:after { clear: both; }
 
-.toggle-bg { position: absolute; top: -4px; left: -4px; width: 100%; height: 100%; background-color: #C0E6F6; border-radius: 40px; border: 4px solid #81C0D5; transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.toggle-bg { position: absolute; top: 0px; /*-4*/ left: 0px; /*-4*/ width: 100%; height: 100%; background-color: #C0E6F6; border-radius: 40px; border: 4px solid #81C0D5; transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-.toggle-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid red; border-radius: 40px; z-index: 2; opacity: 0; }
+.toggle-input { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: 1px solid red; border-radius: 40px; z-index: 2; opacity: 0; cursor: pointer; }
 
-.toggle-switch { position: relative; width: 40px; height: 40px; margin-left: 50px; background-color: #F5EB42; border: 4px solid #E4C74D; border-radius: 50%; transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.toggle-switch { position: relative; width: 32px; height: 32px; margin-left: 50px; background-color: #F5EB42; border: 4px solid #E4C74D; border-radius: 50%; transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-.toggle-switch-figure { position: absolute; bottom: -14px; left: -50px; display: block; width: 80px; height: 30px; border: 8px solid #D4D4D2; border-radius: 20px; background-color: #fff; transform: scale(0.4); transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-.toggle-switch-figure:after { content: ''; display: block; position: relative; top: -65px; right: -42px; width: 15px; height: 15px; border: 8px solid #D4D4D2; border-radius: 100%; border-right-color: transparent; border-bottom-color: transparent; transform: rotateZ(70deg); background-color: #fff; }
-.toggle-switch-figure:before { content: ''; display: block; position: relative; top: -25px; right: -10px; width: 30px; height: 30px; border: 8px solid #D4D4D2; border-radius: 100%; border-right-color: transparent; border-bottom-color: transparent; transform: rotateZ(30deg); background-color: #fff; }
+.toggle-switch-figure { position: absolute; bottom: -10px; left: -50px; display: block; width: 80px; height: 30px; border: 8px solid #D4D4D2; border-radius: 20px; background-color: #fff; transform: scale(0.4); transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.toggle-switch-figure:after { content: ''; display: block; position: relative; top: -56px; right: -32px; width: 15px; height: 15px; border: 8px solid #D4D4D2; border-radius: 100%; border-right-color: transparent; border-bottom-color: transparent; transform: rotateZ(70deg); background-color: #fff; }
+.toggle-switch-figure:before { content: ''; display: block; position: relative; top: -24px; right: -6px; width: 21px; height: 21px; border: 8px solid #D4D4D2; border-radius: 100%; border-right-color: transparent; border-bottom-color: transparent; transform: rotateZ(30deg); background-color: #fff; }
 
-.toggle-switch-figureAlt { content: ''; position: absolute; top: 5px; left: 2px; width: 2px; height: 2px; background-color: #EFEEDA; border-radius: 100%; border: 4px solid #DEE1C5; box-shadow: 42px -7px 0 -3px #FCFCFC, 75px -10px 0 -3px #FCFCFC, 54px 4px 0 -4px #FCFCFC, 83px 7px 0 -2px #FCFCFC, 63px 18px 0 -4px #FCFCFC, 44px 28px 0 -2px #FCFCFC, 78px 23px 0 -3px #FCFCFC; transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform: scale(0); }
+.toggle-switch-figureAlt { content: ''; position: absolute; top: 5px; left: 2px; width: 2px; height: 2px; background-color: #EFEEDA; border-radius: 100%; border: 2px solid #DEE1C5; box-shadow: 32px -2px 0 -1px #FCFCFC, 43px -5px 0 -1px #FCFCFC, 54px 2px 0 -1px #FCFCFC, 44px 4px 0 0px #FCFCFC, 51px 14px 0 0px #FCFCFC, 39px 14px 0 -1px #FCFCFC, 31px 12px 0 0px #FCFCFC; transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform: scale(0); }
 
-.toggle-switch-figureAlt:before { content: ''; position: absolute; top: -6px; left: 18px; width: 7px; height: 7px; background-color: #EFEEDA; border-radius: 100%; border: 4px solid #DEE1C5; }
+.toggle-switch-figureAlt:before { content: ''; position: absolute; top: -5px; left: 5px; width: 6px; height: 6px; background-color: #EFEEDA; border-radius: 100%; border: 2px solid #DEE1C5; }
 
-.toggle-switch-figureAlt:after { content: ''; position: absolute; top: 19px; left: 15px; width: 2px; height: 2px; background-color: #EFEEDA; border-radius: 100%; border: 4px solid #DEE1C5; }
+.toggle-switch-figureAlt:after { content: ''; position: absolute; top: 8px; left: 5px; width: 2px; height: 2px; background-color: #EFEEDA; border-radius: 100%; border: 2px solid #DEE1C5; }
 
 .toggle-input:checked ~ .toggle-switch { margin-left: 0; border-color: #DEE1C5; background-color: #FFFDF2; }
 

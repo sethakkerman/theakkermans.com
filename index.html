@@ -35,10 +35,10 @@
 
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" id="wrapper">
 <div class="toggle-wrapper">
-<div class="toggle">
-    <input class="toggle-input" type="checkbox" />
+  <div class="toggle" onclick="myFunction()">
+    <input id="toggle-checkbox" class="toggle-input" type="checkbox" />
     <div class="toggle-bg"></div>
     <div class="toggle-switch">
       <div class="toggle-switch-figure"></div>
@@ -47,7 +47,7 @@
   </div>
 </div>
 <div class="family_member">
-	<div class="balls"><figure class="profile_image"><img src="https://dswojt61tyjwd.cloudfront.net/profile_image_holly.jpg" alt="Holly Akkerman profile image." /></figure>
+	<div class="balls"><figure class="profile_image"><img id="holly-profile" src="https://dswojt61tyjwd.cloudfront.net/profile_image_holly.jpg" alt="Holly Akkerman profile image." /></figure>
     	
     </div>
     <h1>Holly</h1>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="family_member family_member_right seth">
-	<div class="balls"><figure class="profile_image seth_profile"><img src="https://dswojt61tyjwd.cloudfront.net/profile_image_seth.jpg" alt="Seth Akkerman profile image." /></figure></div>
+	<div class="balls"><figure class="profile_image seth_profile"><img id="seth-profile" src="https://dswojt61tyjwd.cloudfront.net/profile_image_seth.jpg" alt="Seth Akkerman profile image." /></figure></div>
     <h1>Seth</h1>
     <ul><li><a target="_blank" href="http://www.sethakkerman.com/">www.sethakkerman.com</a></li><li><a target="_blank" href="http://www.pseudosuede.com/">www.pseudosuede.com</a></li></ul>
     <ul class="icon_font">
@@ -77,6 +77,34 @@
 
 </div><!--.wrapper-->
 
+
+<script>
+var s = document.getElementById("seth-profile").src;
+var y = document.getElementById("holly-profile").src;
+var z = document.body.style.background;
+
+function myFunction() {
+
+  var x = document.getElementById("toggle-checkbox").checked;
+  
+  console.log(x);
+  console.log(y);
+  console.log(z);
+
+  if (x === true) {
+    //alert("true");
+    //document.body.style.background = "gray";
+    document.getElementById("holly-profile").src = "assets/images/profile_image_holly_fun.jpg";
+	document.getElementById("seth-profile").src = "assets/images/profile_image_seth_fun.jpg";
+  } else {
+    //alert("false");
+    //document.body.style.background = "initial";
+    document.getElementById("holly-profile").src = y;
+	document.getElementById("seth-profile").src = s;
+  }
+
+}
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
