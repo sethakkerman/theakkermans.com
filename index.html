@@ -34,23 +34,21 @@
 <link rel="icon" sizes="192x192" href="assets/touch_icons/touch-icon-192x192.png">
 
 </head>
-<body>
+<body class="resume-mode">
 <div class="wrapper" id="wrapper">
 <div class="toggle-wrapper">
+<p class="toggle-state">Resumé Mode</p>
   <div class="toggle" onclick="myFunction()">
     <input id="toggle-checkbox" class="toggle-input" type="checkbox" />
     <div class="toggle-bg"></div>
-    <div class="toggle-switch">
-      <div class="toggle-switch-figure"></div>
-      <div class="toggle-switch-figureAlt"></div>
-    </div>  
+    <div class="toggle-switch"></div>  
   </div>
 </div>
 <div class="family_member">
 	<div class="balls"><figure class="profile_image"><img id="holly-profile" src="https://dswojt61tyjwd.cloudfront.net/profile_image_holly.jpg" alt="Holly Akkerman profile image." /></figure>
     	
     </div>
-    <h1>Holly</h1>
+    <h1 class="holly-nickname">Holly</h1>
     <ul><li><a target="_blank" href="http://hollyakkerman.com/">www.hollyakkerman.com</a></li><li><a target="_blank" href="http://patternpattern.org/">www.patternpattern.org</a></li></ul>
     <ul class="icon_font">
                     <li class="twitter"><a href="https://twitter.com/trihollatops" target="_blank">L</a></li>
@@ -63,7 +61,7 @@
 
 <div class="family_member family_member_right seth">
 	<div class="balls"><figure class="profile_image seth_profile"><img id="seth-profile" src="https://dswojt61tyjwd.cloudfront.net/profile_image_seth.jpg" alt="Seth Akkerman profile image." /></figure></div>
-    <h1>Seth</h1>
+    <h1 class="seth-nickname">Seth</h1>
     <ul><li><a target="_blank" href="http://www.sethakkerman.com/">www.sethakkerman.com</a></li><li><a target="_blank" href="http://www.pseudosuede.com/">www.pseudosuede.com</a></li></ul>
     <ul class="icon_font">
                     <li class="twitter"><a href="http://twitter.com/sethakkerman" target="_blank">L</a></li>
@@ -81,7 +79,9 @@
 <script>
 var s = document.getElementById("seth-profile").src;
 var y = document.getElementById("holly-profile").src;
-var z = document.body.style.background;
+var z = document.querySelector(".toggle-state").innerHTML;
+var sethNickname = document.querySelector(".seth-nickname").innerHTML;
+var hollyNickname = document.querySelector(".holly-nickname").innerHTML;
 
 function myFunction() {
 
@@ -89,18 +89,27 @@ function myFunction() {
   
   console.log(x);
   console.log(y);
-  console.log(z);
 
   if (x === true) {
     //alert("true");
     //document.body.style.background = "gray";
     document.getElementById("holly-profile").src = "assets/images/profile_image_holly_fun.jpg";
 	document.getElementById("seth-profile").src = "assets/images/profile_image_seth_fun.jpg";
+	document.querySelector(".toggle-state").innerHTML = "Friend Mode";
+	document.querySelector(".seth-nickname").innerHTML = "Sethasaurus";
+	document.querySelector(".holly-nickname").innerHTML = "Trihollatops";
+	document.body.classList.add("friend-mode-background");
+	document.body.classList.remove("resume-mode");
   } else {
     //alert("false");
     //document.body.style.background = "initial";
     document.getElementById("holly-profile").src = y;
 	document.getElementById("seth-profile").src = s;
+	document.querySelector(".toggle-state").innerHTML = z;
+	document.querySelector(".seth-nickname").innerHTML = sethNickname;
+	document.querySelector(".holly-nickname").innerHTML = hollyNickname;
+	document.body.classList.remove("friend-mode-background");
+	document.body.classList.add("resume-mode");
   }
 
 }
