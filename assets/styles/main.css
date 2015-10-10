@@ -67,7 +67,8 @@ figure.profile_image { height: 200px; width: 200px; -moz-border-radius: 100%; -k
 @media screen and (min-width: 56.25em) { .button { left: -105px; } }
 .button img { -webkit-filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3)); -webkit-transform: translateZ(0); transform: translateZ(0); -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=1, Color='#CCC')"; filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=1, Color='#CCC')"; width: 90px; }
 
-.toggle-wrapper { padding: 40px 40px 0 0; text-align: right; }
+.toggle-wrapper { padding: 20px 20px 0 0; text-align: right; }
+@media screen and (min-width: 56.25em) { .toggle-wrapper { padding: 40px 40px 0 0; } }
 
 .friend-mode-background { background-color: rgba(0, 0, 0, 0.5); }
 

@@ -290,8 +290,11 @@ figure.profile_image {
 // Resume State
 /////////////////////////////////////////////////
 .toggle-wrapper {
-	padding:40px 40px 0 0;
-	text-align:right;	
+	padding:20px 20px 0 0;
+	text-align:right;
+	@media screen and (min-width: $width-medium) {
+		padding:40px 40px 0 0;
+	}
 }
 
 .friend-mode-background {
