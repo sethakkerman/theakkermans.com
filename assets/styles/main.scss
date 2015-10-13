@@ -18,6 +18,7 @@ Well hello there! Thanks for taking a look around. If you are curious about the 
 //	- Links
 //	- Paragraphs, Lists, Other
 // 05 Basic Layout
+// 06 Toggle Switch
 // =======================================================================
 
 // =========================
@@ -139,27 +140,30 @@ li {
 }
 
 html {
-	height:100%;	
+	height:100%;
 }
 
 body {
-	background-color: #444749;
-	background: -webkit-linear-gradient(#00aeef , #73bf43); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#00aeef, #73bf43); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#00aeef, #73bf43); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#00aeef , #73bf43); /* Standard syntax (must be last) */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); 
-	width:100%;
-	height:100%;
-	margin:0 auto;
-	background-repeat:no-repeat;
-	background-attachment:fixed;	
-	@media screen and (min-width: $width-medium) {
-		background: -webkit-linear-gradient(left top, #00aeef , #73bf43); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(bottom right, #00aeef, #73bf43); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(bottom right, #00aeef, #73bf43); /* For Firefox 3.6 to 15 */
-		background: linear-gradient(to bottom right, #00aeef , #73bf43); /* Standard syntax (must be last) */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 ); 
+	&.resume-mode {
+		background-color: #444749;
+		background: -moz-linear-gradient(#00aeef, #73bf43);
+		background: -webkit-linear-gradient(#00aeef, #73bf43);
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(#00aeef), to(#73bf43));
+		background: -o-linear-gradient(#00aeef, #73bf43);
+		background: linear-gradient(#00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */ /* Standard syntax (must be last) */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 );
+		background-repeat:no-repeat;
+		background-attachment:fixed;	
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		@media screen and (min-width: $width-medium) {
+			background: -webkit-linear-gradient(left top, #00aeef , #73bf43); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient(bottom right, #00aeef, #73bf43); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient(bottom right, #00aeef, #73bf43); /* For Firefox 3.6 to 15 */
+			background: linear-gradient(to bottom right, #00aeef , #73bf43); /* Standard syntax (must be last) */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 );
+		} 
 	}
 }
 
@@ -184,6 +188,11 @@ img {
 figure.profile_image {
 	height:200px;
 	width:200px;	
+	-moz-border-radius: 100%;
+	-khtml-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	overflow:hidden;
 	@media screen and (min-width: $width-medium) {
 		height:220px;
 		width:220px;
@@ -191,20 +200,11 @@ figure.profile_image {
 }
 
 .balls {
-	-moz-border-radius: 100px;
-	-khtml-border-radius: 100px;
-	-webkit-border-radius: 100px;
-	border-radius: 100px;
-	overflow:hidden;
 	height:200px;
 	width:200px;
 	margin:0 auto;
 	position:relative;
 	@media screen and (min-width: $width-medium) {
-		-moz-border-radius: 110px;
-		-khtml-border-radius: 110px;
-		-webkit-border-radius: 110px;
-		border-radius: 110px;
 		height:220px;
 		width:220px;
 	}
@@ -251,4 +251,100 @@ figure.profile_image {
 		filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=1, Color='#CCC')";
 		width:90px;	
 	}
+}
+
+// =========================
+//	06 Toggle Switch
+// =========================
+
+/////////////////////////////////////////////////
+// Resume State
+/////////////////////////////////////////////////
+.toggle-wrapper {
+	padding:20px 20px 0 0;
+	text-align:right;
+	@media screen and (min-width: $width-medium) {
+		padding:40px 40px 0 0;
+	}
+}
+
+.friend-mode-background {
+	background-color:rgba(0,0,0,0.5);	
+}
+
+.toggle-state {
+	display:inline-block;
+	vertical-align:top;
+	padding:.3em .5em;
+	font-size:100%;
+	letter-spacing:.025em;
+	color:rgba(0,0,0,.5);	
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  padding: 4px;  
+  border-radius: 30px;
+}
+
+.toggle:before,
+.toggle:after {
+  content: '';
+  display: table;
+}
+
+.toggle:after {
+  clear: both;
+}
+
+.toggle-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;  
+  height: 100%;
+  background-color: rgba(0,0,0,.15);
+  border-radius: 30px;
+  border: 2px solid rgba(0,0,0,.15);
+  transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.toggle-input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;  
+  height: 100%;
+  border: 1px solid red;
+  border-radius: 30px;
+  z-index: 2;
+  opacity: 0;
+  cursor:pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin-left: 40px;
+  background-color: rgba(0,0,0,.25);
+  border: 2px solid rgba(0,0,0,.25);
+  border-radius: 50%;
+  transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+/////////////////////////////////////////////////
+// Friend State
+/////////////////////////////////////////////////
+.toggle-input:checked ~ .toggle-switch {
+  margin-left: 0;
+  border-color: rgba(255,255,255,.25);
+  background-color: rgba(255,255,255,.25);
+}
+
+.toggle-input:checked ~ .toggle-bg {
+  background-color: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.15);
 }
