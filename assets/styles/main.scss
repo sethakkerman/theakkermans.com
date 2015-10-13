@@ -31,35 +31,6 @@ Well hello there! Thanks for taking a look around. If you are curious about the 
 //	02 SASS Mixins
 // =========================
 
-// Mixins for the Toggle
-@mixin crater($top, $left, $size) {
-  content: '';
-  position: absolute;
-  top: $top;
-  left: $left;
-  width: $size;
-  height: $size;
-  background-color: #EFEEDA;
-  border-radius: 100%;
-  border: 2px solid #DEE1C5;
-}
-
-@mixin cloudBubble($top, $right, $width, $height, $deg) {
-  content: '';
-  display: block;
-  position: relative;
-  top: $top;
-  right: $right;
-  width: $width;
-  height: $height;
-  border: 8px solid #D4D4D2;
-  border-radius: 100%;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  transform: rotateZ($deg);
-  background-color: #fff;
-}
-
 // =========================
 //	03 SASS Variables
 // =========================
@@ -169,15 +140,10 @@ li {
 }
 
 html {
-	height:100%;	
+	height:100%;
 }
 
 body {
-	width:100%;
-	height:100%;
-	margin:0 auto;
-	background-repeat:no-repeat;
-	background-attachment:fixed;	
 	&.resume-mode {
 		background-color: #444749;
 		background: -moz-linear-gradient(#00aeef, #73bf43);
@@ -186,6 +152,11 @@ body {
 		background: -o-linear-gradient(#00aeef, #73bf43);
 		background: linear-gradient(#00aeef, #73bf43); /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */ /* Standard syntax (must be last) */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#73bf43',GradientType=0 );
+		background-repeat:no-repeat;
+		background-attachment:fixed;	
+		width:100%;
+		height:100%;
+		margin:0 auto;
 		@media screen and (min-width: $width-medium) {
 			background: -webkit-linear-gradient(left top, #00aeef , #73bf43); /* For Safari 5.1 to 6.0 */
 			background: -o-linear-gradient(bottom right, #00aeef, #73bf43); /* For Opera 11.1 to 12.0 */
@@ -334,9 +305,9 @@ figure.profile_image {
   left: 0px;
   width: 100%;  
   height: 100%;
-  background-color: rgba(0,0,0,.15);/*#C0E6F6*/
+  background-color: rgba(0,0,0,.15);
   border-radius: 30px;
-  border: 2px solid rgba(0,0,0,.15);/*#81C0D5*/
+  border: 2px solid rgba(0,0,0,.15);
   transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
 
@@ -358,8 +329,8 @@ figure.profile_image {
   width: 22px;
   height: 22px;
   margin-left: 40px;
-  background-color: rgba(0,0,0,.25);/*#F5EB42*/
-  border: 2px solid rgba(0,0,0,.25);/*#E4C74D*/
+  background-color: rgba(0,0,0,.25);
+  border: 2px solid rgba(0,0,0,.25);
   border-radius: 50%;
   transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
@@ -369,11 +340,11 @@ figure.profile_image {
 /////////////////////////////////////////////////
 .toggle-input:checked ~ .toggle-switch {
   margin-left: 0;
-  border-color: rgba(255,255,255,.25);/*#DEE1C5*/
-  background-color: rgba(255,255,255,.25);/*#FFFDF2*/
+  border-color: rgba(255,255,255,.25);
+  background-color: rgba(255,255,255,.25);
 }
 
 .toggle-input:checked ~ .toggle-bg {
-  background-color: rgba(255,255,255,.15);/*#484848*/
-  border-color: rgba(255,255,255,.15);/*#202020*/
+  background-color: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.15);
 }
