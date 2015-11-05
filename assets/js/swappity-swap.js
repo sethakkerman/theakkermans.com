@@ -21,7 +21,7 @@ var gradientSpeed = 0.002;
 function updateGradient() {
 
 	//if ($ === undefined) return;
-	
+	"use strict";
 	var c0_0 = colors[colorIndices[0]];
 	var c0_1 = colors[colorIndices[1]];
 	var c1_0 = colors[colorIndices[2]];
@@ -73,11 +73,11 @@ function updateGradient() {
 }
 
 function myFunction() {
-
-  var x = document.getElementById("toggle-checkbox").checked;
+	"use strict";
+  	var x = document.getElementById("toggle-checkbox").checked;
   
-  console.log(x);
-  console.log(y);
+  	//console.log(x);
+  	//console.log(y);
 
   if (x === true) {
     //alert("true");
